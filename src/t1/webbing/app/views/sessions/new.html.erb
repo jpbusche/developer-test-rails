@@ -1,0 +1,17 @@
+<h1>Login</h1>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <div class="input-field">
+    <%= f.label "Email" %>
+    <%= f.email_field :email, id: 'email' %>
+  </div>
+
+  <div class="input-field">
+    <%= f.label "Senha" %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit "Entrar" %>
+<% end %>
+
+<span>Não está cadastrado:</span>
+<btn><%= link_to "Cadastre-se!", new_user_path%></btn>
