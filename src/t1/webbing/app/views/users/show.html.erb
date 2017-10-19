@@ -5,4 +5,8 @@
       <tr><td>E-mail:<%= @user.email%></td></tr>
 </table>
 
-<btn><%= link_to "Sair", logout_path %></btn>
+<div style="display: inline-block;">
+	<div class="button"><%= link_to "Sair", root_path, style: 'text-decoration: none; color: #fff'%></div>
+	<div class="button"><%= link_to "Editar", edit_user_path(@user.id), style: 'text-decoration: none; color: #fff'%></div>
+	<div class="button"><%= link_to "Deletar", user_path(@user.id), method: :delete, data: { confirm: 'Você tem certeza?' } , style: 'text-decoration: none; color: #fff'%></div>
+</div>

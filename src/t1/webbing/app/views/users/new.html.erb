@@ -1,26 +1,5 @@
 <h1>Cadastre-se</h1>
 
-<%= form_for(@user) do |f| %>
-  <div class="form-group">
-    <%= f.label :username, "Nome de Usuário" %><br>
-    <%= f.text_field :username %>
-  </div>
-  <div class="form-group">
-    <%= f.label :email, "Email" %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password, "Senha" %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="form-group">
-    <%= f.label :password_confirmation, "Confirme sua senha" %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="form-group">
-    <%= f.label :avatar, "Escolha uma foto", class: 'col-sm-2 control-label' %>
-    <%= f.file_field :avatar %>
-  </div>
-  <%= f.submit "Criar Conta" %>
+<%= render 'form' %>
 
-<% end %>
+<div class="button"><%= link_to "Voltar", root_path, style: 'text-decoration: none; color: #fff'%></div>

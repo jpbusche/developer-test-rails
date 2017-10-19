@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	def new
 		@user = User.new
 	end
 
+	def edit
+	end
+
 	def show
-		@user = User.find(params[:id])
 	end
 
 	def create
@@ -20,7 +23,27 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def update
+		if @user.update(user_params) 
+			flash[:success] = 'Usuário editado com sucesso'
+			redirect_to user_path(@user.id)
+		else
+			flash[:error] = 'Não foi possível editar o usuário'
+			redirect_to new_user_path
+		end
+	end
+
+	def destroy
+		@user.destroy
+    	flash[:success] = 'Usuário deletado com sucesso'
+    	redirect_to root_path
+	end
+
 	private
+
+	def set_user
+		@user = User.find(params[:id])
+	end
 
 	def user_params
 		params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar)
