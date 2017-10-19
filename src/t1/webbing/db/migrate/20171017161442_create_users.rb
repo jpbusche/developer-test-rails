@@ -8,4 +8,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.timestamps
     end
   end
+
+  def down
+  	drop_attached_file :users, :avatar
+  end
+  
 end
