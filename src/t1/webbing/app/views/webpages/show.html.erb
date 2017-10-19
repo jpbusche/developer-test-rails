@@ -1,0 +1,24 @@
+<div style='text-align: center; margin-top: 10px'>
+	<span><%= image_tag @webpage.logo.url(:thumb), class:'user-profile-image' %></span>
+
+	<p style="font-size: 30px">
+  		<strong><%= @webpage.title%></strong>
+	</p>
+	<p style="font-size: 20px">
+  		<%= @webpage.author %> / <%= @webpage.url %>
+	</p>
+	<p style="font-size: 20px">
+  		<%= @webpage.description %>
+	</p>
+	<p style="font-size: 20px">
+		<strong>Conteúdo</strong><br>
+  		<%= @webpage.body %>
+	</p>
+
+
+	<div style="display: inline-block;">
+		<%= link_to "Voltar", root_path, style: 'text-decoration: none; color: #09eaea'%>
+		<%= link_to "Editar", edit_webpage_path(@webpage.id), style: 'text-decoration: none; color: #09eaea'%>
+		<%= link_to "Deletar", webpage_path(@webpage.id), method: :delete, data: { confirm: 'Você tem certeza?' } , style: 'text-decoration: none; color: #09eaea'%>
+	</div>
+</div>

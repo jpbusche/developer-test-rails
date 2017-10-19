@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_secure_password
+	has_many :web_pages
 	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
 
 	EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

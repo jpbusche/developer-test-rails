@@ -1,0 +1,8 @@
+<h1>Páginas Webs</h1>
+	<div style="display: inline-block;">
+		<% @webpages.each do |webpage| %>
+			<a style="margin-right: 15px"href="/webpages/<%= webpage.id%>"><%= image_tag(webpage.logo.url(:thumb)) %></a>
+		<% end %>
+	</div>
+
+<div style="margin-top: 20px"><%= link_to "Criar Página Web", new_webpage_path, style: 'text-decoration: none; color: #09eaea'%>

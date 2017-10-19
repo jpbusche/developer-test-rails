@@ -10,11 +10,11 @@
 
   <body>
     <ul>
-      <li><a style="float: left"><%= image_tag("logofwx13png", size: "20x20", alt: "") %></a></li>
-      <% if params[:id] != nil %>
-        <li><a style="margin-left: 1500px;" href="<%= params[:id] %>"><%= User.find_by(id: params[:id]).username%></a></li>
+      <li><a href="/"><%= image_tag("logofwx13png", size: "20x20", alt: "") %></a></li>
+      <% if !current_user.nil? %>
+        <li><a href="/users/<%= current_user.id %>"><%= current_user.username%></a></li>
       <% else %>
-        <li><a style="margin-left: 1500px" href="/login">Login</a></li>
+        <li><a href="/login">Login</a></li>
       <% end %>
     </ul>
   	<div class="alertContainer">

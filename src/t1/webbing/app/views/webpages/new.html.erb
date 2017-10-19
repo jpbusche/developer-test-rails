@@ -1,0 +1,37 @@
+<div style='text-align: center'>
+	<h1>Cadastre uma página</h1>
+
+	<%= form_for(@webpage) do |f| %>
+
+	  <div class="form-group">
+	    <%= f.label :title, "Título da Página" %><br>
+	    <%= f.text_field :title %>
+	  </div>
+	  <div class="form-group">
+	    <%= f.label :description, "Descrição" %><br>
+	    <%= f.text_field :description %>
+	  </div>
+	  <div class="form-group">
+	    <%= f.label :body, "Conteúdo" %><br>
+	    <%= f.text_area :body %>
+	  </div>
+	  <div class="form-group">
+	    <%= f.label :author, "Criador da Página" %><br>
+	    <%= f.text_field :author %>
+	  </div>
+	  <div class="form-group">
+	    <%= f.label :url, "URl da Página" %><br>
+	    <%= f.text_field :url %>
+	  </div>
+	  <div class="form-group" style="height: 60px">
+	    <%= f.label :logo, "Escolha um logo" %><br>
+	    <%= f.file_field :logo %>
+	  </div>
+	 	<div style='height: 40px'>
+	  	<%= f.submit "Criar Página" %>
+	  </div>
+
+	<% end %>
+
+	<div><%= link_to "Voltar", root_path, style: 'text-decoration: none; color: #09eaea'%></div>
+</div>	

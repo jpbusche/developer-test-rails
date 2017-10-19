@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171019035457) do
+ActiveRecord::Schema.define(version: 20171019163936) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20171019035457) do
     t.string "logo_content_type"
     t.integer "logo_file_size"
     t.datetime "logo_updated_at"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_webpages_on_user_id"
   end
 
 end
