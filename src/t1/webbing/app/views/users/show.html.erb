@@ -1,12 +1,18 @@
-<span><%= image_tag @user.avatar.url(:thumb), class:'user-profile-image' %></span>
+<div style='text-align: center; margin-top: 10px'>
+	<span><%= image_tag @user.avatar.url(:thumb), class:'user-profile-image' %></span>
 
-<table>
-      <tr><td>Nome de Usuário:<%= @user.username%></td></tr>
-      <tr><td>E-mail:<%= @user.email%></td></tr>
-</table>
+	<p style="font-size: 20px">
+  	Nome de Usuário:<br>
+  	<strong><%= @user.username %></strong>
+	</p>
+	<p style="font-size: 20px">
+  	Email:<br>
+  	<strong><%= @user.email %></strong>
+	</p>
 
-<div style="display: inline-block;">
-	<div class="button"><%= link_to "Sair", root_path, style: 'text-decoration: none; color: #fff'%></div>
-	<div class="button"><%= link_to "Editar", edit_user_path(@user.id), style: 'text-decoration: none; color: #fff'%></div>
-	<div class="button"><%= link_to "Deletar", user_path(@user.id), method: :delete, data: { confirm: 'Você tem certeza?' } , style: 'text-decoration: none; color: #fff'%></div>
+	<div style="display: inline-block;">
+		<%= link_to "Sair", root_path, style: 'text-decoration: none; color: #09eaea'%>
+		<%= link_to "Editar", edit_user_path(@user.id), style: 'text-decoration: none; color: #09eaea'%>
+		<%= link_to "Deletar", user_path(@user.id), method: :delete, data: { confirm: 'Você tem certeza?' } , style: 'text-decoration: none; color: #09eaea'%>
+	</div>
 </div>

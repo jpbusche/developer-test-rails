@@ -13,28 +13,13 @@
  *= require_tree .
  *= require_self
  */
-.button {
-    background-color: #9b5107;
-    border-radius: 25px;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.button:link {
-  text-decoration: none;
-}
 
 .alertContainer {
   display: flex;
   flex-direction: column;
   width: 250px;
   position: absolute;
-  top: 10px;
+  top: 70px;
   right: 0;
   z-index: 9999;
 }
@@ -63,4 +48,28 @@
 
 .alert.alert-error {
   background: #ba0d0d;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
 }

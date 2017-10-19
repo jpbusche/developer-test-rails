@@ -1,17 +1,21 @@
-<h1>Login</h1>
+<div style='text-align: center'>
+	<h1>Login</h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
-  <div class="input-field">
-    <%= f.label "Email" %>
-    <%= f.email_field :email, id: 'email' %>
-  </div>
+	<%= form_for(:session, url: login_path) do |f| %>
+	  <div class="input-field">
+	    <%= f.label "Email" %><br>
+	    <%= f.email_field :email, id: 'email' %>
+	  </div>
 
-  <div class="input-field">
-    <%= f.label "Senha" %>
-    <%= f.password_field :password %>
-  </div>
-  <%= f.submit "Entrar" %>
-<% end %>
+	  <div class="input-field" style="height: 60px">
+	    <%= f.label "Senha" %><br>
+	    <%= f.password_field :password %>
+	  </div>
+	  <div style='height: 40px'>
+	  	<%= f.submit "Entrar" %>
+	  </div>
+	<% end %>
 
-<span>Não está cadastrado:</span>
-<div class="button"><%= link_to "Cadastre-se", new_user_path, style: 'text-decoration: none; color: #fff'%></div>
+	<span>Não está cadastrado:</span>
+	<div><%= link_to "Cadastre-se", new_user_path, style: 'text-decoration: none; color: #09eaea'%></div>
+</div>
