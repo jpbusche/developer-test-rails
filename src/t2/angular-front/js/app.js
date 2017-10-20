@@ -1,4 +1,4 @@
-var app = angular.module('Webbing', [ngRoute]);
+var app = angular.module('WebbingApp', [ngRoute]);
 app.config(function ($routeProvider) {
 	$routeProvider
 	  .when('/', {
